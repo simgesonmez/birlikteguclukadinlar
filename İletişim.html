@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts (PT Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Hikayeler İletişim CSS -->
+    <link rel="stylesheet" href="css/hikayeler-iletişim.css">
+</head>
+
+<body>
+
+     <!-- Navbar kısmı başlangıç  --> 
+        <!-- sayfanın düzeni için geçici bir navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    <!-- Navbar kısmı bitiş -->
+
+    <!-- Form başlangıç -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <!-- Tanıtım Yazısı -->
+                <div class="form-container">
+                    <div class="intro-text">
+                        <h2 class="pt-serif-bold">Sesini Duyur, Hikayen Paylaş! 🌸</h2>
+                        <p>
+                            Kadınların güçlendiği, birbirini desteklediği ve haklarını savunduğu bir dünya için her ses çok değerli.
+                            Eğer senin de paylaşmak istediğin bir hikaye varsa, duymak istiyoruz! Şiddete uğramış birinin
+                            gücüne kavuşma yolculuğu ya da kadın hakları adına yaptığın bir farkındalık çalışması…
+                            Her hikaye, ilham veren bir ışık olabilir.
+                        </p>
+                        <p>
+                            Hikayenizi bizimle paylaşarak daha fazla kadına ulaşmamıza yardımcı olabilirsiniz. Formu doldurup
+                            gönderin, sesinizi duyuralım! Herhangi bir sorunuz, öneriniz veya görüşünüz varsa, bize
+                            ulaşmaktan çekinmeyin. Hep birlikte daha güçlü bir kadın hakları hareketi oluşturabiliriz.
+                        </p>
+                        <p class="fw-bold text-secondary">Unutmayın, yalnız değilsiniz. 💜</p>
+                    </div>
+
+                    <!-- Form -->
+                    <form action="mailto:ornek@domain.com" method="post" enctype="text/plain">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Adınız</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Adınızı girin"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta Adresiniz</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="E-posta adresinizi girin" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Hikayeniz</label>
+                            <textarea class="form-control" id="message" name="message" rows="5"
+                                placeholder="Hikayenizi buraya yazabilirsiniz..." required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Gönder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Form bitiş -->
+
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
