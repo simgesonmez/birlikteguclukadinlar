@@ -37,6 +37,7 @@ body {
     background-position: center;
     color: #333;  /* Yazı rengi siyah yapıldı */
     text-align: center;
+    opacity: 0.8; /* 0 tamamen şeffaf, 1 tamamen opak */
 }
 
 .intro-text {
