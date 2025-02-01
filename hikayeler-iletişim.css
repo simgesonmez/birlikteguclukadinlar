@@ -113,50 +113,70 @@ body {
 
 /****************************** Navbar ***********************************/
 
-.navbar { 
-    background-color: rgba(0, 0, 0, 0.5); 
-    padding: 15px 0; 
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    z-index: 1000; 
-} 
- 
-.nav-container { 
-    width: 100%; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 0 50px; 
+.navbar {
+   background-color: rgba(0,0,0,0.5);
+    padding: 0px 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo { 
-    color: white; 
-    font-size: 1.5rem; 
-    font-weight: bold; 
-    text-decoration: none; 
-    font-family: 'Segoe UI', sans-serif; 
-} 
- 
-.nav-menu { 
-    display: flex; 
-    gap: 30px; 
-    list-style: none; 
-    margin: 0; 
-    padding: 0; 
-} 
- 
-.nav-menu li a { 
-    color: white; 
-    text-decoration: none; 
-    font-size: 1rem; 
-    font-weight: 500; 
-    font-family: 'Segoe UI', sans-serif; 
-    transition: color 0.3s ease; 
-} 
- 
-.nav-menu li a:hover { 
-    color: #e791bc; 
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.logo {
+    color: white;
+    margin-left: -100px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin-right: -100px;
+    padding: 0;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Segoe UI', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #ff69b4;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+.social-icon i { 
+    color: #744c97;  
+    font-size: 24px;  
 }
 
 /********************************* Fotter  *********************************/
@@ -169,13 +189,13 @@ body {
     font-weight: 500; 
 } 
  
-.footer .quote-box { 
+.footer-content { 
     display: inline-block; 
     background-color: white; 
     padding: 20px; 
     border-radius: 10px; 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
-    color: #e791bc; 
+    color: #ff69b4; 
     font-size: 16px; 
     font-style: italic; 
     animation: waveBox 2s ease-in-out infinite; 
@@ -293,138 +313,5 @@ body {
     }
 }
 
-/****************************** Navbar ***********************************/
-
-/* Navbar'ı sabitle ve sayfayla kaydırırken sabit tut */
-nav {
-    background-color: rgba(51, 51, 51, 0.8);  /* Koyu gri ve %80 opaklık */
-    position: fixed;  /* Sayfa kaydırıldıkça sabit kalacak */
-    top: 0;  /* Üst kısmı sabit tut */
-    left: 0;  /* Sol kısımdan sıfır mesafe */
-    width: 100%;  /* Tam genişlikte olmasını sağlar */
-    z-index: 1000;  /* Diğer içeriklerin üstünde olmasını sağlar */
-    padding: 10px 0; /* Üst ve alt boşluk ekle */
-    
-
-}
 
 
-
-/* Navbar genel düzen */
-.nav-container {
-    display: flex;
-    justify-content: space-between; /* Logo sola, menü sağa gider */
-    align-items: center;
-    padding: 10px 20px;
-}
-
-/* Logo stilleri */
-.logo {
-    font-size: 22px;  /* Daha büyük font */
-    font-weight: bold;
-    color: #ffffff;   /* Beyaz renk, daha belirgin */
-    text-transform: uppercase;
-}
-
-/* Menü stilleri */
-.menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.menu li {
-    position: relative;
-}
-
-.menu li a {
-    text-decoration: none;
-    color: #ffffff;   /* Beyaz renk, belirgin */
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 15px;
-    display: block;
-    transition: 0.3s ease-in-out;
-    border-radius: 5px;
-}
-
-.menu li a:hover {
-    background: #ff1493; /* Daha belirgin pembe arka plan */
-    color: white;        /* Yazı beyaz */
-}
-
-/* Dropdown Menü */
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #ffffff; /* Beyaz arka plan */
-    border-radius: 5px;
-    display: none;
-    list-style: none;
-    padding: 10px 0;
-    min-width: 180px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-
-.dropdown-menu li a {
-    color: #6a0572;    /* Koyu mor metin */
-    padding: 10px 15px;
-    display: block;
-    transition: 0.3s;
-}
-
-.dropdown-menu li a:hover {
-    background: #ff1493; /* Koyu pembe hover arka plan */
-    color: white;        /* Beyaz renk yazı */
-}
-
-/* Dropdown Hover */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* Responsive Düzenleme */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 10px;
-    }
-}
-
-
-/********************************* Fotter  *********************************/
-
-.footer { 
-    background-color: #e791bc; 
-    padding: 20px 0; 
-    text-align: center; 
-    font-size: 18px; 
-    font-weight: 500; 
-} 
- 
-.footer .quote-box { 
-    display: inline-block; 
-    background-color: white; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
-    color: #e791bc; 
-    font-size: 16px; 
-    font-style: italic; 
-    animation: waveBox 2s ease-in-out infinite; 
-}
-
-.social-icon i {  
-    color: #744c97;   
-    font-size: 24px;   
-  }
