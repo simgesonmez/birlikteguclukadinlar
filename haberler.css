@@ -302,6 +302,9 @@ h3 {
   font-style: italic; 
   animation: waveBox 2s ease-in-out infinite; 
 }
+.footer p {  
+  color: black;  
+}
 
 .main-title {
   text-align: center;
