@@ -1,81 +1,60 @@
-/* Genel Navbar Stili */header {
-    background:  rgba(0, 0, 0, 0.5); /* Mor-pembe geçişli arka plan */    
-    padding: 15px 0; 
-}
-nav ul {
-    list-style: none;   
-     margin: 0;
-    padding: 0;    
-    display: flex;
-    justify-content: center;    
-    align-items: center;
-    gap: 20px; 
-    margin-left: 800px;
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     
 }
-nav ul li {
-    position: relative; 
-   
+
+/* Header stili */
+header {
+    position: absolute; /* Header'ı fotoğrafın üstüne yerleştir */
+    top: 0;
+    width: 100%; /* Header'ı tam genişlik yap */
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
+    color: white; /* Yazı rengi beyaz */
+    z-index: 10; /* Header'ın üstte kalmasını sağla */
+    padding: 15px 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Sol ve sağa elemanları ayır */
+    position:fixed;
+
 }
-nav ul li a {
-    text-decoration: none;    
+
+/* Logo */
+.logo {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 20px; /* Soldan boşluk */
+}
+
+/* Navbar Menüsü */
+header nav {
+    display: flex; 
+    
+    
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Elemanlar arasında boşluk bırak */ 
+    margin-left: 230px;
+}
+
+header nav ul li a {
+    text-decoration: none;
     color: white;
-    font-size: 16px;   
-     font-weight: bold;
-    padding: 10px 15px;    
-    display: block;
-    transition: 0.3s ease-in-out;  
- border-radius: 5px;
- 
+    font-weight: bold;
+    transition: color 0.3s;
 }
-nav ul li a:hover {    
-    background: rgba(255, 255, 255, 0.2);
+
+header nav ul li a:hover {
+    color:  #ff69b4;
 }
-/* Dropdown Menü */.dropdown-menu {
-    position: absolute;   
-     top: 100%;
-    left: 0;   
-     background: white;
-    border-radius: 5px;    
-    display: none;
-    list-style: none;   
-     padding: 10px 0;
-    min-width: 180px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);   
-     z-index: 1000;
-}
-.dropdown-menu li {   
-     display: block;
-}
-.dropdown-menu li a {    
-    color:  rgba(0, 0, 0, 0.5);
-    padding: 10px 15px;   
-     display: block;
-    transition: 0.3s;    
-    font-weight: normal;
-}
-.dropdown-menu li a:hover {    
-    background: #ff1493;
-    color: white;}
-/* Dropdown Hover */
-.dropdown:hover .dropdown-menu {    
-    display: block;
-}
-/* Responsive Navbar */@media 
-(max-width: 768px) {
-    nav ul {        
-        flex-direction: column;
-        align-items: start;       
-         padding-left: 20px;
-    }
-    .dropdown-menu {       
-         position: relative;
-        width: 100%;       
-         box-shadow: none;
-    }
-    .dropdown-menu li a {       
-         padding: 10px;
-    }}
     iframe {
         display: block;
         margin: 0 auto;
@@ -96,7 +75,7 @@ nav ul li a:hover {
 h1{
        
     color: #ff69b4;
-    margin-top: 200px; /* Navbar yüksekliğine göre ayar yaparak h1'i alt tarafa kaydırıyoruz */
+    margin-top: 120px; /* Navbar yüksekliğine göre ayar yaparak h1'i alt tarafa kaydırıyoruz */
     text-align: center; 
     position: relative; 
 
@@ -137,28 +116,6 @@ iframe {
     animation: waveBox 2s ease-in-out infinite;
 } 
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif; 
-    flex-direction: column;
-}
-
-/* Header stili */
-header {
-    position: absolute; /* Header'ı fotoğrafın üstüne yerleştir */
-    top: 0;
-    width: 100%; /* Header'ı tam genişlik yap */
-    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
-    color: white; /* Yazı rengi beyaz */
-    z-index: 10; /* Header'ın üstte kalmasını sağla */
-    padding: 15px 20px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Sol ve sağa elemanları ayır */
-    position: fixed;
-}
 
 
 
@@ -166,4 +123,3 @@ header {
 
 
 
-h
