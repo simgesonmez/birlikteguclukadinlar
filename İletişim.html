@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts (PT Serif) -->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Hikayeler İletişim CSS -->
+    <link rel="stylesheet" href="css/hikayeler-iletişim.css">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+    
+        body {
+            background-image: url('fotoğraflar/images2.jpg'); /* Fotoğraf yolu */
+            background-size: cover; /* Resmin tüm ekranı kaplamasını sağlar */
+            background-position: center; /* Resmin ortalanmasını sağlar */
+            background-repeat: no-repeat; /* Resmin tekrarlanmasını engeller */
+        }
+        
+    </style>
+</head>
+
+<body>
+
+ <!-- Navbar Başlangıç -->
+ <header>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Birlikte Güçlü Kadınlar</div> <!-- Logo solda -->
+            <ul class="menu">
+                <li><a href="anasayfa.html">Ana Sayfa</a></li>
+                <li class="dropdown">
+                    <a href="#">Keşfet</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Kadın Hakları</a></li>
+                        <li><a href="#">Şiddet Türleri</a></li>
+                        <li><a href="#">Haberler</a></li>
+                        <li><a href="#">Hikayeler</a></li>
+                        <li><a href="#">Öneriler</a></li>
+                        <li><a href="kurumlar.html">Kurumlar</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Misyonumuz</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- Navbar Bitiş -->
+
+    <!-- Form başlangıç -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <!-- Tanıtım Yazısı -->
+                <div class="form-container">
+                    <div class="intro-text">
+                        <h2 class="pt-serif-bold">Sesini Duyur, Hikayen Paylaş! 🌸</h2>
+                        <p>
+                          Sesini Duyur, Hikayen Paylaş! 🌸
+                          Kadınların güçlendiği, birbirini desteklediği ve haklarını savunduğu bir dünya için her ses çok değerli. Hikayenizi paylaşarak, şiddet sonrası güçlenme ya da kadın hakları için farkındalık yaratma yolculuğunuzu anlatın. Her hikaye, ilham verici bir ışık olabilir.
+                          Formu doldurup gönderin, sesinizi duyuralım! 
+                        </p>
+                        <p class="fw-bold text-secondary">Unutmayın, yalnız değilsiniz. 💜</p>
+                    </div>
+
+                    <!-- Form -->
+                    <form action="mailto:ornek@domain.com" method="post" enctype="text/plain">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Adınız</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Adınızı girin"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta Adresiniz</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="E-posta adresinizi girin" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Hikayeniz</label>
+                            <textarea class="form-control" id="message" name="message" rows="5"
+                                placeholder="Hikayenizi buraya yazabilirsiniz..." required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Gönder</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+  </div>
+    <!-- Form bitiş -->
+
+    <!-- Footter Başlangıç -->
+
+    <footer class="footer"> 
+      <div class="footer-content"> 
+          <p>Kadın Hakları İçin Birlikte Güçlüyüz!</p> 
+          <div class="social-icons"> 
+              <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a> 
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> 
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a> 
+          </div> 
+      </div> 
+      <div class="footer-bottom"> 
+          <p>&copy; 2025 Tüm Hakları Saklıdır</p> 
+      </div> 
+  </footer>
+
+    <!-- Footter bitiş -->
+
+    
+
+
+
+
+
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
