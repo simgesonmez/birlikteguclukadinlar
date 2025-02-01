@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Şiddet Farkındalık Anketi</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: rgb(255, 192, 234);
+            color: #5d48b8;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #images{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        #images img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: grayscale(1);
+            transition: 1s opacity;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        #images img:first-of-type{
+            opacity: 1;
+        }
+
+        #images .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.80);
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 32px auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .survey-form {
+            background-color: rgb(255, 255, 255);
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #5d48b8;
+        }
+
+        .description {
+            color: #7e77dd;
+            margin-bottom: 32px;
+        }
+
+        .question-group {
+            margin-bottom: 32px;
+            padding: 24px;
+            border: 1px solid #ffa8d5;
+            border-radius: 12px;
+        }
+
+        .question-group h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #5d48b8;
+        }
+
+        .question-group p {
+            color: #7e77dd;
+            margin-bottom: 16px;
+        }
+
+        .checkbox-group {
+            display: grid;
+            gap: 12px;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .checkbox-container input {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffcbe6;
+            border-radius: 4px;
+            margin-right: 12px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .checkbox-container input:checked {
+            background-color: #bd1877;
+            border-color: #bd1877;
+        }
+
+        .checkbox-container input:checked::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 14px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .checkbox-container input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #f8b9d4;
+        }
+
+        .checkbox-text {
+            color: #5d48b8;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 12px 24px;
+            background-color: #bd1877;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-button:hover {
+            background-color: #f8b9d4;
+        }
+
+        .submit-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #f8b9d4;
+        }
+        .footer { 
+            background-color: #ffe5ec; 
+            padding: 20px 0; 
+            text-align: center; 
+            font-size: 18px; 
+            font-weight: 500; 
+        } 
+         
+        .footer .quote-box { 
+            display: inline-block; 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+            color: #ff69b4; 
+            font-size: 16px; 
+            font-style: italic; 
+            animation: waveBox 2s ease-in-out infinite; 
+        }
+    </style>
+</head>
+<body>
+    <div id="images">
+        <div class="overlay"></div>
+        <img src="img/violence_2.jpg" alt="">
+    </div>
+    <div class="container">
+        <form id="surveyForm" class="survey-form">
+            <h1>Şiddet Farkındalık Anketi</h1>
+            <p class="description">Kadına yönelik şiddet türleri hakkında farkındalığı ölçmek için hazırlanmış bir ankettir.</p>
+
+            <!-- Fiziksel Şiddet Soruları -->
+            <div class="question-group">
+                <p>Aşağıdakilerden hangilerini daha önce duydunuz?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru1" value="1">
+                        <span class="checkbox-text">Fiziksel şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru1" value="2">
+                        <span class="checkbox-text">Psikolojik / duygusal şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru1" value="3">
+                        <span class="checkbox-text">Ekonomik şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru1" value="4">
+                        <span class="checkbox-text">Cinsel şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru1" value="5">
+                        <span class="checkbox-text">Siber şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru1" value="6">
+                        <span class="checkbox-text">Hiçbiri</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <p>Şiddetin en yaygın türü sizce hangisidir?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru2" value="1">
+                        <span class="checkbox-text">Fiziksel şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru2" value="2">
+                        <span class="checkbox-text">Psikolojik / duygusal şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru2" value="3">
+                        <span class="checkbox-text">Ekonomik şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru2" value="4">
+                        <span class="checkbox-text">Cinsel şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru2" value="5">
+                        <span class="checkbox-text">Siber şiddet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru2" value="6">
+                        <span class="checkbox-text">Fikrim yok</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Sözel Şiddet Soruları -->
+            <div class="question-group">
+                <p>Şiddetin herhagi birine maruz kaldınız mı?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru3" value="1">
+                        <span class="checkbox-text">Evet</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru3" value="0">
+                        <span class="checkbox-text">Hayır</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="radio" name="soru3" value="2">
+                        <span class="checkbox-text">Cevap vermek istemiyorum</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <p>Şiddetin önlenmesi için en etkili yöntem(ler) sizce nedir?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru4" value="1">
+                        <span class="checkbox-text">Eğitim ve bilinçlendirme</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru4" value="2">
+                        <span class="checkbox-text">Yasal yaptırımlar</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru4" value="3">
+                        <span class="checkbox-text">Toplumsal farkındalık kampanyaları</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru4" value="4">
+                        <span class="checkbox-text">Psikolojik destek ve danışmanlık</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="soru4" value="5">
+                        <span class="checkbox-text">Diğer</span>
+                    </label>
+                    <label class="input-container">
+                        <input type="text" placeholder="Diğer ise belirtiniz" name="soru4-diger">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Ekonomik Şiddet Soruları -->
+            <div class="question-group">
+                <h2>Ekonomik Şiddet - 1</h2>
+                <p>Bunlardan hangileri ekonomik şiddettir?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="ekonomik1" value="1">
+                        <span class="checkbox-text">Çalışmasına izin vermemek</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="ekonomik1" value="2">
+                        <span class="checkbox-text">Parasını elinden almak</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="ekonomik1" value="3">
+                        <span class="checkbox-text">Kredi kartını izinsiz kullanmak</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2>Ekonomik Şiddet - 2</h2>
+                <p>Aşağıdakilerden hangileri ekonomik şiddettir?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="ekonomik2" value="1">
+                        <span class="checkbox-text">Maaşına el koymak</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="ekonomik2" value="2">
+                        <span class="checkbox-text">Zorla borçlandırmak</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="ekonomik2" value="3">
+                        <span class="checkbox-text">Çalıştığı yeri sürekli aramak</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Psikolojik Şiddet Soruları -->
+            <div class="question-group">
+                <h2>Psikolojik Şiddet - 1</h2>
+                <p>Hangileri psikolojik şiddettir?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="psikolojik1" value="1">
+                        <span class="checkbox-text">Arkadaşlarıyla görüşmesini engellemek</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="psikolojik1" value="2">
+                        <span class="checkbox-text">Sürekli eleştirmek</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="psikolojik1" value="3">
+                        <span class="checkbox-text">Aşağılamak</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2>Psikolojik Şiddet - 2</h2>
+                <p>Aşağıdakilerden hangileri psikolojik şiddettir?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="psikolojik2" value="1">
+                        <span class="checkbox-text">Kıyafetlerini kontrol etmek</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="psikolojik2" value="2">
+                        <span class="checkbox-text">Ailesiyle görüşmesini engellemek</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="psikolojik2" value="3">
+                        <span class="checkbox-text">Suçlu hissettirmek</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Dijital Şiddet Soruları -->
+            <div class="question-group">
+                <h2>Dijital Şiddet - 1</h2>
+                <p>Hangileri dijital şiddettir?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="dijital1" value="1">
+                        <span class="checkbox-text">Sosyal medya hesaplarını kontrol etmek</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="dijital1" value="2">
+                        <span class="checkbox-text">İzinsiz fotoğraf paylaşmak</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="dijital1" value="3">
+                        <span class="checkbox-text">Telefonunu karıştırmak</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h2>Dijital Şiddet - 2</h2>
+                <p>Aşağıdakilerden hangileri dijital şiddettir?</p>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="dijital2" value="1">
+                        <span class="checkbox-text">Mesajlarını okumak</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="dijital2" value="2">
+                        <span class="checkbox-text">Konum paylaşmaya zorlamak</span>
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="dijital2" value="3">
+                        <span class="checkbox-text">Sosyal medyada taciz etmek</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Anketi Gönder </button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById("surveyForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    Swal.fire({
+        title: "Anket Gönderildi",
+        text: "Anketiniz başarıyla gönderildi. Detaylı bilgi almak için Tamam'a tıklayınız",
+        icon: "success",
+        confirmButtonText: "Tamam"
+    }).then((res) => {
+        if(res.isConfirmed){
+            window.location.href = "siddetTurleri.html";
+        }
+    })
+    
+})
+    </script>
+    <footer class="footer"> 
+        <div class="footer-content"> 
+            <p>Kadın Hakları İçin Birlikte Güçlüyüz!</p> 
+            <div class="social-icons"> 
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a> 
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> 
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a> 
+            </div> 
+        </div> 
+        <div class="footer-bottom"> 
+            <p>&copy; 2025 Tüm Hakları Saklıdır</p> 
+        </div> 
+    </footer>
+</body>
+</html>
