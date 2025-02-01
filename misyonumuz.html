@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Misyonumuz</title>
+    <style>
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: 'Segoe UI', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            color: #e791bc;
+        }
+
+        .hero-section {
+            background-color: #9A75BA;
+            padding: 120px 0 60px;
+            color: white;
+            text-align: center;
+        }
+
+        .mission-section {
+            background-color: #ffe5ec;
+            padding: 60px 0;
+        }
+
+        .mission-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .goals-section {
+            background-color: #7E5B99;
+            padding: 60px 0;
+            color: white;
+        }
+
+        .goal-item {
+            background-color: #9A75BA;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .goal-icon {
+            font-size: 2rem;
+            color: #e791bc;
+            margin-bottom: 15px;
+        }
+
+        .image-section {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-section:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 10px 20px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            .hero-section {
+                padding: 100px 0 40px;
+            }
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-container {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .image-caption {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        .parallax-section {
+            background-image: url('https://images.unsplash.com/photo-1564663546430-46192ce6be42');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 40px 0;
+        }
+
+        /* Sosyal medya ikonları için yeni stiller */
+        .social-media-bar {
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 10px 0 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-media-bar:hover {
+            background-color: rgba(0,0,0,0.8);
+            transform: translateY(-50%) translateX(-5px);
+        }
+
+        .social-media-bar a {
+            color: white;
+            font-size: 1.2rem;
+            padding: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .social-media-bar a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Her sosyal medya ikonu için özel renkler */
+        .social-media-bar a.facebook:hover {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .social-media-bar a.twitter:hover {
+            background-color: #1da1f2;
+            color: white;
+        }
+
+        .social-media-bar a.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+        }
+
+        .social-media-bar a.linkedin:hover {
+            background-color: #0077b5;
+            color: white;
+        }
+
+        /* Yukarı çık butonu için stiller */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #7E5B99;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #9A75BA;
+            transform: translateY(-3px);
+        }
+
+        .mission-card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .mission-card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+
+        .mission-icon {
+            transition: all 0.3s ease;
+        }
+
+        .mission-card-hover:hover .mission-icon {
+            transform: scale(1.1);
+        }
+
+        .counter-wrapper {
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .counter-wrapper:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .counter {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #fff, #e791bc);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Ekip kartları için stiller */
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .team-img-wrapper {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #7E5B99;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .team-img-wrapper {
+            border-color: #e791bc;
+        }
+
+        .team-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .team-card h5 {
+            color: #7E5B99;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .team-card .role {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .team-social-links a {
+            color: #7E5B99;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .team-social-links a:hover {
+            color: #e791bc;
+            transform: translateY(-3px);
+            display: inline-block;
+        }
+
+        .mission-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .mission-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .mission-list li:before {
+            content: "•";
+            color: #7E5B99;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+        .blockquote {
+            font-style: italic;
+            color: #7E5B99;
+            border-left: 5px solid #e791bc;
+            padding: 20px;
+            background-color: rgba(126, 91, 153, 0.1);
+        }
+
+        .footer { 
+  background-color: #e791bc; 
+  padding: 20px 0; 
+  text-align: center; 
+  font-size: 18px; 
+  font-weight: 500; 
+} 
+
+    .footer .quote-box { 
+  display: inline-block; 
+  background-color: white; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+  color: #e791bc; 
+  font-size: 16px; 
+  font-style: italic; 
+  animation: waveBox 2s ease-in-out infinite; 
+    }
+
+    .social-icon i {
+  color: #744c97; 
+  font-size: 24px;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="anasayfa.html" class="logo">Birlikte Güçlü Kadınlar</a>
+            <ul class="nav-menu">
+            <li><a href="anasayfa.html">Ana Sayfa</a></li>
+            <li><a href="#">Misyonumuz</a></li>
+            <li><a href="#">Kadın Hakları</a></li>
+            <li><a href="kurumlar.html">Şiddet Türleri</a></li>
+            <li><a href="#">Öneriler</a></li>
+            <li><a href="#">Haberler</a></li>
+            <li><a href="#">Kurumlar</a></li>
+            <li><a href="#">Hikayeler</a></li>
+            <li><a href="#">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 mb-4">Kadın Hakları Platformu</h1>
+            <p class="lead">Amacımız, kadın hakları konusunda farkındalık yaratmak ve güçlü bir dayanışma ortamı oluşturmak.</p>
+        </div>
+    </section>
+
+    <section class="parallax-section">
+        <div class="container text-center">
+            <h2 class="display-4">"Değişim Bizimle Başlar"</h2>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-card">
+                <h2 class="text-center mb-4" style="color: #7E5B99;">Misyonumuz</h2>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1520785145672-94e9abd8b121?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Misyonumuz" 
+                         class="hero-image">
+                    <p class="image-caption">Kadın hakları ve dayanışma mücadelemiz devam ediyor</p>
+                </div>
+                <p class="lead mb-4">Bu platformun temel amacı, kadın hakları konusunda toplumsal farkındalığı artırmak ve kadınların eşitlik, adalet ve özgürlük mücadelesini desteklemektir. Kadınların toplumsal, kültürel, ekonomik ve siyasal hayatta eşit haklara sahip olmalarını savunuyor, her bireyin potansiyelini en üst düzeye çıkarabileceği bir toplum yaratmayı hedefliyoruz.</p>
+
+                <p class="mb-4">Platformumuz, kadınların karşılaştığı her türlü ayrımcılık ve eşitsizlikle mücadele etmeyi, onların seslerini duyurmayı ve haklarını korumayı amaçlamaktadır. Eğitimden iş hayatına, sosyal yaşamdan siyasi temsile kadar her alanda kadınların güçlenmesi için çalışıyoruz. Bu doğrultuda:</p>
+
+                <ul class="mission-list mb-4">
+                    <li>Kadınların eğitime eşit erişimini destekliyor ve mesleki gelişimlerine katkı sağlıyoruz</li>
+                    <li>İş dünyasında kadınların varlığını güçlendirmek için mentorluk ve networking imkanları sunuyoruz</li>
+                    <li>Kadına yönelik şiddetle mücadelede hukuki destek ve danışmanlık hizmetleri veriyoruz</li>
+                    <li>Toplumsal cinsiyet eşitliği konusunda farkındalık çalışmaları yürütüyoruz</li>
+                    <li>Kadınların ekonomik bağımsızlığını kazanmaları için girişimcilik programları düzenliyoruz</li>
+                    <li>Karar alma mekanizmalarında kadın temsilinin artırılması için çalışmalar yapıyoruz</li>
+                </ul>
+
+                <p class="mb-4">İnanıyoruz ki, kadınların güçlenmesi toplumun tamamının güçlenmesi demektir. Bu nedenle, tüm paydaşlarımızla birlikte kadınların hayatın her alanında eşit ve özgür bireyler olarak var olabilmeleri için çalışıyoruz. Amacımız, gelecek nesillere daha adil, eşit ve özgür bir dünya bırakmaktır.</p>
+
+                <p class="mb-4">Kadın hakları mücadelesi, yalnızca kadınların değil, tüm toplumun ortak sorumluluğudur. Bu platformda, her bir kadının hikayesi değerlidir ve her bir başarı öyküsü, diğer kadınlara ilham kaynağı olmaktadır. Dayanışma ve birliktelik ruhuyla, toplumsal değişimin öncüsü olmaya devam edeceğiz.</p>
+
+                <blockquote class="blockquote text-center mt-5">
+                    <p class="mb-0">"Kadınların güçlenmesi, toplumun güçlenmesidir. Değişim bizimle başlar, birlikte daha güçlüyüz!"</p>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section class="goals-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Hedeflerimiz</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="goal-item">
+                        <i class="fas fa-lightbulb goal-icon"></i>
+                        <h3>Farkındalık Yaratmak</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="goal-item" style="animation-delay: 0.2s;">
+                        <i class="fas fa-book-open goal-icon"></i>
+                        <h3>Bilgiye Erişimi Kolaylaştırmak</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="goal-item" style="animation-delay: 0.4s;">
+                        <i class="fas fa-hands-helping goal-icon"></i>
+                        <h3>Dayanışma ve Destek Sağlamak</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="goal-item" style="animation-delay: 0.6s;">
+                        <i class="fas fa-star goal-icon"></i>
+                        <h3>İlham Vermek ve Umut Aşılamak</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="goal-item" style="animation-delay: 0.8s;">
+                        <i class="fas fa-shield-alt goal-icon"></i>
+                        <h3>Şiddete Karşı Bilinçlendirme</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section py-5" style="background-color: #7E5B99;">
+        <div class="container">
+            <div class="row  text-center text-white">
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="counter-wrapper">
+                        <div class="counter" data-target="1500">0</div>
+                        <h5>Destekçimiz</h5>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="counter-wrapper">
+                        <div class="counter" data-target="50">0</div>
+                        <h5>Başarılı Proje</h5>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="counter-wrapper">
+                        <div class="counter" data-target="100">0</div>
+                        <h5>İş Birliği</h5>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="counter-wrapper">
+                        <div class="counter" data-target="2000">0</div>
+                        <h5>Mutlu Kadın</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="success-stories py-5" style="background-color: #ffe5ec;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #7E5B99;">Başarı Hikayeleri</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="text-muted"><i class="far fa-calendar-alt me-2"></i>15 Mart 2024</small>
+                                <span class="text-danger"><i class="fas fa-heart"></i> 245</span>
+                            </div>
+                            <p class="card-text">"Bu platform sayesinde haklarımı öğrendim ve kendimi daha güçlü hissediyorum. Artık iş hayatımda karşılaştığım zorlukların üstesinden nasıl gelebileceğimi biliyorum."</p>
+                            <footer class="blockquote-footer mt-3">Ayşe K. <cite title="Source">İstanbul</cite></footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="text-muted"><i class="far fa-calendar-alt me-2"></i>12 Mart 2024</small>
+                                <span class="text-danger"><i class="fas fa-heart"></i> 189</span>
+                            </div>
+                            <p class="card-text">"Kadın hakları konusunda düzenlenen eğitim programlarına katıldım. Bu eğitimler sayesinde hem kendimi geliştirdim hem de çevremdeki kadınlara yardımcı olabiliyorum. Dayanışmanın gücüne inanıyorum."</p>
+                            <footer class="blockquote-footer mt-3">Zeynep M. <cite title="Source">Ankara</cite></footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="text-muted"><i class="far fa-calendar-alt me-2"></i>10 Mart 2024</small>
+                                <span class="text-danger"><i class="fas fa-heart"></i> 156</span>
+                            </div>
+                            <p class="card-text">"Ekonomik bağımsızlığımı kazanmam gerektiğini bu platform sayesinde anladım. Girişimcilik eğitimlerine katıldım ve şimdi kendi işimin sahibiyim. Tüm kadınlara örnek olmak istiyorum."</p>
+                            <footer class="blockquote-footer mt-3">Elif B. <cite title="Source">İzmir</cite></footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="text-muted"><i class="far fa-calendar-alt me-2"></i>8 Mart 2024</small>
+                                <span class="text-danger"><i class="fas fa-heart"></i> 203</span>
+                            </div>
+                            <p class="card-text">"Şiddete maruz kalan bir kadın olarak buradan aldığım destekle hayatımı değiştirdim. Hukuki süreçte yanımda oldular ve şimdi yeni bir hayata başladım. Asla yalnız değilsiniz!"</p>
+                            <footer class="blockquote-footer mt-3">Merve D. <cite title="Source">Bursa</cite></footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="text-muted"><i class="far fa-calendar-alt me-2"></i>5 Mart 2024</small>
+                                <span class="text-danger"><i class="fas fa-heart"></i> 167</span>
+                            </div>
+                            <p class="card-text">"Eğitim hayatımda yaşadığım zorlukları bu platformdaki kadınların desteğiyle aştım. Şimdi üniversite son sınıf öğrencisiyim ve gelecek için büyük hayallerim var."</p>
+                            <footer class="blockquote-footer mt-3">Seda Y. <cite title="Source">Antalya</cite></footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="text-muted"><i class="far fa-calendar-alt me-2"></i>3 Mart 2024</small>
+                                <span class="text-danger"><i class="fas fa-heart"></i> 178</span>
+                            </div>
+                            <p class="card-text">"İş yerinde yaşadığım mobbing sürecinde haklarımı öğrendim ve mücadele ettim. Artık daha güçlü bir kadın olarak, diğer kadınlara da yol gösteriyorum."</p>
+                            <footer class="blockquote-footer mt-3">Deniz K. <cite title="Source">Eskişehir</cite></footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter py-5" style="background-color: #9A75BA;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center text-white">
+                    <h3>Gelişmelerden Haberdar Olun</h3>
+                    <p>Haftalık bültenimize kaydolun, güncel gelişmeleri kaçırmayın.</p>
+                    <form class="mt-4">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="E-posta adresiniz">
+                            <button class="btn btn-light" type="submit" style="background-color: #e791bc; color: white;">Kaydol</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-cards py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #7E5B99;">Çalışma Alanlarımız</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 mission-card-hover">
+                        <div class="card-body text-center">
+                            <div class="mission-icon mb-3">
+                                <i class="fas fa-graduation-cap fa-3x" style="color: #7E5B99;"></i>
+                            </div>
+                            <h4>Eğitim Desteği</h4>
+                            <p>Kadınların eğitim hayatlarını sürdürebilmeleri için burs ve mentorluk desteği sağlıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 mission-card-hover">
+                        <div class="card-body text-center">
+                            <div class="mission-icon mb-3">
+                                <i class="fas fa-briefcase fa-3x" style="color: #7E5B99;"></i>
+                            </div>
+                            <h4>Kariyer Gelişimi</h4>
+                            <p>İş hayatında kadınların güçlenmesi için eğitimler ve networking fırsatları sunuyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 mission-card-hover">
+                        <div class="card-body text-center">
+                            <div class="mission-icon mb-3">
+                                <i class="fas fa-gavel fa-3x" style="color: #7E5B99;"></i>
+                            </div>
+                            <h4>Hukuki Destek</h4>
+                            <p>Hak ihlallerine karşı hukuki danışmanlık ve destek hizmetleri sağlıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events py-5" style="background-color: #fff;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #7E5B99;">Yaklaşan Etkinlikler</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="event-card p-4 border-start border-4 border-primary shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Kadın Girişimciler Buluşması</h5>
+                            <span class="badge bg-primary">20 Mart</span>
+                        </div>
+                        <p class="mb-2">İş dünyasında başarılı kadın girişimcilerle networking etkinliği.</p>
+                        <button class="btn btn-outline-primary btn-sm">Detaylı Bilgi</button>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="event-card p-4 border-start border-4 border-success shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Hukuk Atölyesi</h5>
+                            <span class="badge bg-success">25 Mart</span>
+                        </div>
+                        <p class="mb-2">Kadın hakları ve yasal düzenlemeler hakkında bilgilendirme semineri.</p>
+                        <button class="btn btn-outline-success btn-sm">Detaylı Bilgi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team py-5" style="background-color: #ffe5ec;">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: #7E5B99;">Ekibimiz</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="team-card text-center">
+                        <div class="team-img-wrapper">
+                            <img src="images/sueda.jpg" alt="Sueda Nur ŞEMEN">
+                        </div>
+                        <h5>Sueda Nur ŞEMEN</h5>
+                        <p class="role">24, Ankara</p>
+                        <div class="team-social-links">
+                            <a href="https://www.linkedin.com/in/sueda-nur-semen/"><i class="fab fa-linkedin"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="team-card text-center">
+                        <div class="team-img-wrapper">
+                            <img src="images/simge.jpeg" alt="simge">
+                        </div>
+                        <h5>F. Simge SÖNMEZ</h5>
+                        <p class="role">24, İstanbul</p>
+                        <div class="team-social-links">
+                            <a href="https://www.linkedin.com/in/simgeesonmez/"><i class="fab fa-linkedin"></i></a>
+                
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="team-card text-center">
+                        <div class="team-img-wrapper">
+                            <img src="images/marziye.png" alt="marziye">
+                        </div>
+                        <h5>Marziye ULAŞ</h5>
+                        <p class="role">25, Manisa</p>
+                        <div class="team-social-links">
+                            <a href="https://www.linkedin.com/in/marziye-ulaş-984184237/"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="team-card text-center">
+                        <div class="team-img-wrapper">
+                            <img src="images/pelin.jpeg" alt="Pelin">
+                        </div>
+                        <h5>Pelin CEYLAN</h5>
+                        <p class="role">24, Kayseri</p>
+                        <div class="team-social-links">
+                            <a href="https://www.linkedin.com/in/pelinceylan/"><i class="fab fa-linkedin"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <div class="team-card text-center">
+                        <div class="team-img-wrapper">
+                            <img src="images/büşra.jpeg" alt="Büşra">
+                        </div>
+                        <h5>Büşra Nur DEMİR</h5>
+                        <p class="role">27, Sakarya</p>
+                        <div class="team-social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="social-media-bar position-fixed">
+        <div class="d-flex flex-column gap-3">
+            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const goalItems = document.querySelectorAll('.goal-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            goalItems.forEach(item => observer.observe(item));
+        });
+
+        // Sayaç animasyonu için
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / 200;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+
+        // Yukarı çık butonu için script
+        const scrollToTop = document.querySelector('.scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 200) {
+                scrollToTop.classList.add('active');
+            } else {
+                scrollToTop.classList.remove('active');
+            }
+        });
+
+        scrollToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer class="footer"> 
+        <div class="footer-content"> 
+            <p>Kadın Hakları İçin Birlikte Güçlüyüz!</p> 
+            <div class="social-icons"> 
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a> 
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> 
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a> 
+            </div> 
+        </div> 
+        <div class="footer-bottom"> 
+            <p>&copy; 2025 Tüm Hakları Saklıdır.</p> 
+        </div> 
+    </footer>
+</body>
+</html> 
