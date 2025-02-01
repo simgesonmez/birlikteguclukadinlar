@@ -306,7 +306,10 @@ form .btn-custom:hover {
     top: 5px;
     right: 10px;
 } 
-social-icon{
-    color: #551A8B; 
 
-} 
+    .social-icon i {  
+        color: #744c97;   
+        font-size: 24px;   
+      }
+
+
