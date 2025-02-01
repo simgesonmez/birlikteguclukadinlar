@@ -113,54 +113,56 @@ body {
 
 /****************************** Navbar ***********************************/
 
-.navbar {
-   background-color: rgba(0,0,0,0.5);
-    padding: 0px 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
+header {
+    position: absolute; /* Header'ı fotoğrafın üstüne yerleştir */
     top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%; /* Header'ı tam genişlik yap */
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
+    color: white; /* Yazı rengi beyaz */
+    z-index: 10; /* Header'ın üstte kalmasını sağla */
+    padding: 15px 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge */
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    justify-content: space-between; /* Sol ve sağa elemanları ayır */
+    position:fixed;
+
 }
 
+/* Logo */
 .logo {
-    color: white;
-    margin-left: -100px;
-    font-size: 1.5rem;
+    font-size: 15px;
     font-weight: bold;
-    text-decoration: none;
-    font-family: 'Segoe UI', sans-serif;
+    margin-left: 20px; /* Soldan boşluk */
 }
 
-.nav-menu {
+/* Navbar Menüsü */
+header nav {
+    display: flex; 
+    
+    
+}
+
+header nav ul {
     display: flex;
-    gap: 30px;
     list-style: none;
-    margin-right: -100px;
+    margin: 0;
     padding: 0;
+    gap: 20px; /* Elemanlar arasında boşluk bırak */ 
+    margin-left: 230px;
 }
 
-.nav-menu li a {
-    color: white;
+header nav ul li a {
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: 'Segoe UI', sans-serif;
-    transition: color 0.3s ease;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-.nav-menu li a:hover {
-    color: #ff69b4;
+header nav ul li a:hover {
+    color:  #ff69b4;
 }
+
 
 @media (max-width: 768px) {
     .nav-container {
@@ -181,24 +183,25 @@ body {
 
 /********************************* Fotter  *********************************/
 
-.footer { 
-    background-color: #e791bc; 
-    padding: 20px 0; 
-    text-align: center; 
-    font-size: 18px; 
+.footer {
+    background-color: #e791bc;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 18px;
     font-weight: 500; 
-} 
- 
-.footer-content { 
-    display: inline-block; 
-    background-color: white; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
-    color: #ff69b4; 
-    font-size: 16px; 
-    font-style: italic; 
-    animation: waveBox 2s ease-in-out infinite; 
+    margin-top: 50px;
+}
+
+.footer .quote-box {
+    display: inline-block;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    color: #e791bc;
+    font-size: 16px;
+    font-style: italic;
+    animation: waveBox 2s ease-in-out infinite;
 }
 /**************************** Hikayeler Sayfası Stilleri ************************/
 body {

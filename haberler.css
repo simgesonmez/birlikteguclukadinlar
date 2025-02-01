@@ -29,10 +29,10 @@ body {
 
 .logo {
     color: white;
-    font-size: 1.5rem;
+    font-size: 15px;
     font-weight: bold;
     text-decoration: none;
-    font-family: 'Segoe UI', sans-serif;
+    
 }
 
 .nav-menu {
