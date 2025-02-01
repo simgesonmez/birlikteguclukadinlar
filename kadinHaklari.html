@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+
+    <title>Kadın Hakları
+    </title>
+    <style>
+        /* Eski header stilini kaldır */
+        /* header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(102, 77, 216, 0.841);
+            color: rgb(255, 255, 255);
+            padding: 50px 0;
+            text-align: center;
+        } */
+
+        /* Yeni header stili */
+        .page-header {
+            margin-top: 70px;
+            background-color: #9a75ba;
+            color: rgb(255, 255, 255);
+            padding: 20px 0;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: 500;
+        }
+
+        /* Navbar stilleri */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: 'Segoe UI', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            color: #ff69b4;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+
+        /* İçeriği navbar'ın altına kaydır */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:#9975ba;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        
+            background-size: auto;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3 {
+            font-family: 'Georgia', serif; /* Başlıklar için farklı bir font */
+            font-weight: bold; /* Başlıkları kalın yap */
+        }   
+
+        h1 {
+            font-size: 2.5rem; /* Büyük başlık boyutu */
+        }
+
+        h2 {
+            animation: fadeIn 2s ease-in-out;
+            font-size: 2rem; /* Orta boy başlık */
+            color: #53026e; /* Başlık rengi */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        h3 {
+            font-size: 1rem;
+            color: #521c7b;;
+        }
+
+        p {
+            font-family: 'Merriweather', serif; /* Okunaklı ve modern bir font */
+            font-size: 18px; /* Paragraf yazı boyutu */
+            font-weight: 400; /* Normal kalınlıkta yazı */
+            animation: slideIn 1.5s ease-in-out;
+            color: #383838; /* Daha yumuşak bir metin rengi */
+            text-indent: 50px; /* Paragraf başı boşluğu */
+            margin-bottom: 20px; /* Paragraflar arası boşluk*/
+            line-height: 1.8; /* Satır arası mesafe */
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        ul {
+            animation: slideIn 1.5s ease-in-out;    
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        /* Resimler için genel stil */
+        img {
+            max-width: 100%; /* Resimlerin container'ı aşmamasını sağlar */
+            height: auto; /* Oranları korur */
+            border-radius: 10px; /* Yuvarlak köşeler */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+            margin: 20px 0; /* Resimlerin üst ve alt boşlukları */
+            display: block; /* Resimlerin blok olarak davranmasını sağlar */
+        }
+
+        /* Özel resim boyutları */
+        .img-small {
+            max-width: 50%; /* Küçük resimler için genişlik */
+            margin: 20px auto; /* Ortala ve boşluk ekle */
+        }
+
+        .img-medium {
+            max-width: 70%; /* Orta boy resimler için genişlik */
+            margin: 20px auto; /* Ortala ve boşluk ekle */
+        }
+
+        .img-large {
+            max-width: 90%; /* Büyük resimler için genişlik */
+            margin: 20px auto; /* Ortala ve boşluk ekle */
+        }
+
+        /* Resimleri sola hizala */
+        .img-left {
+            max-width: 50%;
+            float: left;
+            margin: 0 20px 20px 0; /* Sağ ve alt boşluk */
+        }
+
+        /* Resimleri sağa hizala */
+        .img-right {
+            float: right;
+            margin: 0 0 20px 20px; /* Sol ve alt boşluk */
+        }
+
+        /* Flexbox ile resim ve metni yan yana hizala */
+        .flex-container {
+            display: flex;
+            align-items: center; /* Dikeyde ortala */
+            gap: 20px; /* Resim ve metin arası boşluk */
+        }
+
+        .flex-container img {
+            flex: 1; /* Resmin boyutunu esnek hale getir */
+            max-width: 50%; /* Resmin maksimum genişliği */
+        }
+
+        .flex-container p {
+            flex: 2; /* Metnin boyutunu esnek hale getir */
+        }
+
+        .footer { 
+            background-color: #ffe5ec; 
+            padding: 20px 0; 
+            text-align: center; 
+            font-size: 18px; 
+            font-weight: 500; 
+        } 
+         
+        .footer .quote-box { 
+            display: inline-block; 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+            color: #ff69b4; 
+            font-size: 16px; 
+            font-style: italic; 
+            animation: waveBox 2s ease-in-out infinite; 
+        }
+
+        /* Buton stilini tanımla */
+        a.button {
+            display: inline-block; /* Blok özelliği kazandırır */
+            padding: 10px 20px; /* İç boşluk */
+            background-color: #ff7eea; /* Arkaplan rengi */
+            color: white; /* Yazı rengi */
+            text-decoration: none; /* Alt çizgiyi kaldır */
+            border-radius: 5px; /* Köşeleri yuvarlak yap */
+            font-weight: bold; /* Kalın yazı */
+            text-align: center; /* Metni ortala */
+            transition: background-color 0.3s ease; /* Renk geçiş efekti */
+            font-size: 16px; /* Yazı boyutu */
+            border: 2px solid #ff42e0; /* Kenarlık ekle */
+            margin: 10px 0; /* Dış boşluk */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+
+        }
+
+        /* Butonun üzerine gelindiğinde stil değişikliği */
+        a.button:hover {
+            background-color: #baabff; /* Hover rengi */
+            border-color: #baabff; /* Hover kenarlık rengi */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Hover gölge efekti */
+        } 
+        .social-icon i { 
+            color: #744c97;  
+            font-size: 24px;  
+        }     
+
+        
+
+    
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="anasayfa.html" class="logo">Birlikte Güçlü Kadınlar</a>
+            <ul class="nav-menu">
+                <li><a href="anasayfa.html">Ana Sayfa</a></li>
+                <li><a href="#">Hikayeler</a></li>
+                <li><a href="#">Misyonumuz</a></li>
+                <li><a href="kurumlar.html">Kurumlar</a></li>
+                <li><a href="#">Haberler</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="page-header">
+        <h1> KADIN HAKLARI </h1> 
+    </div>
+    <div class="container">
+        <h2>Kadın Hakları Nelerdir?</h2>
+        <div>
+            <img src="img/KAdinHaklariiii.jpeg" alt="Kadın Hakları" class="img-left" >
+        
+            <p>
+            Dünyanın her yerinde kadınlar aynı haklara sahiptir. Bu haklar tıpkı insan hakları düşüncesinde olduğu gibi, kadınlara hiçbir ayrım gözetmeksizin tanınmış olan hakları kapsamaktadır. Eğitim hakkı, şiddetten uzak bir hayat yaşama hakkı, adil ve eşit ücret hakkı, mülkiyet sahibi olma hakkı, ifade özgürlüğü, seçme ve seçilme hakkı gibi haklar temel kadın haklarından bazılarıdır. Bu haklar, temelde insan haklarıdır ve insan haklarının ayrım gözetmeksizin herkesin doğuştan sahip olduğu haklardır. Kadınlara yönelik temel hakların tanınması ve korunması, insan haklarının uygulanması anlamının yanı sıra sosyoekonomik ve sosyokültürel alanlarda da gelişmeye dair sonuçları olabilecek çok yönlü bir etkiye sahiptir.
+        </p>
+
+       
+    </div>
+        <p>
+            Ancak dünyanın pek çok ülkesinde kadın hakları çeşitli şekillerde ve derecelerde ihlal edilmektedir. Dünyada kadınların ayrımcılığa maruz kalmadıkları neredeyse hiçbir yer bulunmamaktadır. Eğitime erişimleri birçok yerde kısıtlanmaktadır, ekonomik haklar konusunda adil ve eşit ücretten yoksundurlar, sağlık hizmetlerine erişimde kısıtlı imkânlara sahiptirler, şiddet ve güvenlik riskleriyle daha fazla karşılaşmaktadırlar, taciz olaylarına daha çok maruz kalmaktadırlar. Çocuk gelinler, zorla çalıştırılma, cinsel sömürü, taciz, fiziksel şiddet, eğitimden mahrum bırakılma, iş hayatındaki ayrımcılık ve siyasi katılıma erişim gibi problemler, başlıca kadın hakları ihlallerindendir.  
+        </p>
+        
+
+        <p>
+            Kadınların hak ihlallerine maruz kalmalarının veya temel haklarından mahrum bırakılmalarının çeşitli sebepleri bulunmaktadır. Bu sebepler coğrafi, dinî, kültürel ve ekonomik koşullarla doğrudan bağlantılıdır. Dünya genelinde, örneğin Afganistan'da kadınların ve kız çocuklarının eğitimlerinin kısıtlanması, İran'da devam eden protestolar, çeşitli Avrupa ülkelerinde doğum izni ve eşit işe eşit ücret gibi taleplerle yürütülen kampanyalar, Güney Amerika'da kız çocuklarının cinsel sömürü amacıyla kaçırılması gibi insan haklarını ve kadın haklarını ihlal eden birçok mesele bulunmaktadır.
+        </p>
+    
+        <h3>
+            Küresel Durum
+        </h3>
+        <p>
+            Küresel Cinsiyet Farkı Raporu'na göre 2022 yılı itibarıyla küresel çaptaki cinsiyet farkı %68,1'dir. 2022 yılında yürütülen ve 146 ülkeyi kapsayan araştırmanın sonucunda, çeşitli alanlarda erkek ve kadın arasındaki uygulama farkları tespit edilmiştir. Araştırmanın sonuçlarına göre sağlık alanındaki fark %95,8, eğitimdeki fark %94,4 ve siyasi yaptırım gücü alanındaki fark %22 olarak tespit edilmiştir. Kadınların eğitim, sağlık, iş gücüne katılım, siyasi temsil gibi konulardaki payı ülkelerin sosyoekonomik durumlarına göre değişiklik göstermektedir.
+        </p>
+        <img src="img/kadin_haklari.jpg" alt="Kadının iş gücünde ki payı" style="width:100%; border-radius: 10px; margin-bottom: 20px;">
+        <p>
+            Kadın ve erkek eşitliği alanında yapılan araştırmalara göre henüz hiçbir ülke tam olarak cinsiyet eşitliği kapsamında belirlenen normları tam olarak uygulamıyor olsa da farkın en az olduğu ülke İzlanda (%90,8) olarak belirlenmiştir. İzlanda'yı sırasıyla Finlandiya (%86,2), Norveç (%84,5), Yeni Zelanda (%84,1), İsveç (%82,2), Ruanda (%81,1), Nikaragua (%81), Namibya (%80,7), İrlanda (%80,4) ve Almanya (%80,1) takip etmektedir.
+        </p>
+        <h3>
+            Sağlık Hizmetlerine Erişimde Kadınlar
+        </h3>
+        <p>
+            Sağlıklı olmak ve sağlık hizmetlerine erişim temel bir insan hakkıdır. Ayı zamanda bu temel hak bireylerin ve toplumların gelişimi için vazgeçilmez bir ön koşul olarak kabul edilmektedir. Kadınların da hem temel insan hakkı olarak temel sağlık hizmetlerine erişim hakkı hem de biyolojik ve fizyolojik sebeplerle gerekli sağlık hizmetlerinden faydalanma hakkı bulunmaktadır. Örneğin doğum öncesinde ve sonrasında, hamilelik sırasında ve üreme sağlığı gibi konularda her kadının gelişen tıbbi ve teknolojik gelişmelerin getirdiği imkânlarla sağlık hakkından yararlanma hakkı olsa da anne ölüm oranları küresel çapta hâlen oldukça yüksektir. Geçen 20 yıla kıyasla dünya genelinde %38'den fazla düşüş görülse de Sahra-altı Afrika başta olmak üzere hâlâ yüksek anne ölümlerinin görüldüğü bölgeler bulunmaktadır. Bu durum, annenin temel sağlık hizmetlerinden mahrumiyeti sebebiyle yaşanmaktadır. Şüphesiz ki, kadınların sağlık haklarından mahrum kalması, diğer haklardan mahrumiyet ile bağlantılıdır. Erken yaşta evlilik, eğitime erişimden mahrum kalma, fiziksel şiddet, aile içerisindeki karar mekanizmalarında etkin olamama gibi sebepler, kadınların sağlık haklarından yararlanabilme ve sağlık konusunda bilinçlenebilme konularının önündeki temel engellerdir.
+        </p>
+        <p>
+            Araştırmalar kadınların erkeklere oranla iki ila dört kat daha fazla intihar girişiminde bulunma eğiliminde olduklarını ortaya koymaktadır. Erkekler intihar girişimlerinde daha ölümcül yolları tercih etmeleri sebebiyle kadınlara kıyasla daha yüksek ölüm oranına sahip olsalar da intihar girişiminde bulunan kadınların sayısı erkeklerden daha fazladır.
+        </p>
+        <h3>
+            Kadınların İş Gücündeki Payı
+        </h3>
+        <img src="img/i.jpg" alt="Kadının iş gücünde ki payı" style="width:100%; border-radius: 10px; margin-bottom: 20px;">
+        <p>
+            Dünya genelinde çalışma çağındaki kadınların %47'si iş gücü piyasasında yer alırken bu oran erkeklerde %74'tür. Bu rakam son çeyrek yüzyılda neredeyse hiç değişmemiştir. Ayrıca BM tarafından yayımlanan The World's Women 2020: Trends and Statistics başlıklı raporda, Covid-19 pandemisinin sebep olduğu ekonomik sıkıntıların etkilerinin hâlen devam ettiği ve bu kırılgan ekonomik ortamdan en çok etkilenen gruplardan birinin de kadınlar olduğu belirtilmektedir. Kadınların iş gücü piyasasına katılımının en düşük olduğu bölgeler Güney Asya, Kuzey Afrika ve Batı Asya'dır. Bu bölgelerdeki kadınların iş gücüne katılım oranlarının %30'un altında olduğu belirtilmektedir.Küresel ölçekte, ortalama olarak kadınlar çalışma hakkı bakımından erkeklerin yasal haklarının yalnızca dörtte üçüne sahiptir.
+        </p>
+        <h3>
+            Kadınların Siyasi Temsil Düzeyi
+        </h3>
+        <p>
+            19 Eylül 2022 tarihi itibarıyla BM üyesi 193 ülkenin 28'inde 30 kadının devlet/hükümet başkanı olarak görev yaptığı kaydedilmektedir.[11] Dünya çapında kadınların diğer önemli siyasi makamlardaki temsil oranlarına bakıldığında bakanların %21'inin,[12] parlamenterlerin %26'sının[13] ve yerel hükümetlerdeki meclislerin %34'ünün[14] kadın siyasilerden oluştuğu söylenebilmektedir. BM raporlarında mevcut hızda devam etmesi hâlinde dünya çapında parlamentolardaki eşit temsilin 2062 yılında sağlanabileceği belirtilmektedir.[15] Kadınların %50 ve daha fazla oranda bakanlıkta görev yaptığı ülkeler sırasıyla Nikaragua (%58,82), Avusturya (%57,14), Belçika (%57,14), İsveç (%57,14), Arnavutluk (%56,25), Ruanda (%54,84), Kosta Rika (%52.00), Kanada (%51,43), Andorra, Finlandiya, Fransa, Gine-Bissau ve İspanya'dır (%50,00).[16] Bu oranlar 2021 yılı baz alınarak tespit edilmiş oranlardır. 
+        </p>
+        <p>
+            2022 yılında yayımlanan Global Gender Gap adlı raporda ise kadınların bakanlık pozisyonlarındaki temsil oranının 2006 yılında %9,9 iken 2022 yılında yaklaşık iki kat artarak %16,1'e yükseldiği belirtilmektedir. Kadınların bakanlık pozisyonlarında en fazla paya sahip olduğu ülkeler Nikaragua (%58,8), Belçika (%57,1) ve İsveç'tir (%57,1). Parlamentolardaki kadın oranı ise küresel çapta %14,9'dan %22,9'a yükselmiştir. Parlamentolarında en yüksek kadın oranına sahip ülkeler ise Ruanda (%61,3), Küba (%53,4), Nikaragua (%50,6) ve Meksika'dır (%50).Ocak 2022 itibarıyla ulusal parlamentolarında en çok kadın temsilci bulunan ülkeler.
+        </p>
+        <h3>
+            Küresel Bir Sorun: Kadına Şiddet
+        </h3>
+        <img src="img/şiddet.jpeg" alt="Kadına şiddet" class="img-left ">
+        <p>
+            Kadına yönelik şiddet insan hakları ihlallerinin aşırı şekillerinden biridir. Dünyanın her yerinde kadınlar, eğitim durumları, gelir durumları veya yaşları ne olursa olsun fiziksel, psikolojik, ekonomik ve cinsel şiddete maruz kalmaktadır. Dünya çapında, neredeyse her üç kadından birine denk gelen 736 milyon kadının hayatlarında en az bir kez fiziksel ve/veya cinsel şiddete maruz kaldığı belirtilmektedir. Yaşanan şiddet olaylarının %60'ının raporlanmadığı tahmin edilmektedir.[18] 15 yaş üzerindeki kadınların %30'u şiddete maruz kalmış/kalmaktadır. Bu rakamlara cinsel taciz eylemlerine dair rakamlar dâhil değildir. En yaygın şiddet ise kadının eşinden ya da aile bireylerinden gördüğü şiddettir. Kadınlara yönelik şiddet eylemlerinin çoğu mevcut ya da eski eşleri veya birlikte oldukları partnerleri tarafından gerçekleştirilmektedir. 15 yaş üzerindeki 640 milyondan fazla kadının bu türden bir yakın eş/partner şiddetine maruz kaldığı bilinmektedir. 15-19 yaş aralığındaki kız çocuklarından bir ilişki içerisinde olanların %24'ü fiziksel ve/veya cinsel şiddete maruz kalmıştır. 15-24 yaş aralığındaki kadınların %16'sı ise bu türden bir şiddete son 12 ay içerisinde maruz kaldıklarını bildirmişlerdir.
+        </p>
+        <p>
+            Kadına yönelik şiddet eylemleri çeşitli formlarda görülebileceği gibi kamusal alanlar, evler ve hatta online platformlar gibi çeşitli alanlarda da ortaya çıkabilmektedir. Gelişen teknolojiyle birlikte artan farkındalığa ve ekonomik alandaki gelişmelere rağmen kadına yönelik şiddet eylemlerinin önüne geçilememektedir. Her yıl yüz binlerce kadının hayatını kaybetmesine veya sakat kalmasına neden olan şiddet olaylarına karşı caydırıcılığı yüksek hukuki ve idari düzenlemelerin geliştirilmesi oldukça önemlidir. Aksi takdirde, kadına yönelik şiddet giderek artan bir küresel sorun olarak nesilleri fiziksel, psikolojik ve ekonomik olarak etkilemeye devam edecektir.
+        </p>
+        <img src="img/yardım işareti.jpg" alt="Şiddet anında yardım isteme işateri" style="width:100%; border-radius: 10px; margin-bottom: 20px;">
+              
+        <a href="siddetAnketi.html" class="button">Şiddet türleri anketini doldurarak kendinizi test edebilirsiniz</a>
+
+        <h3>
+            Türkiye'de Kadın Hakları ve Güncel Meseleler
+        </h3>
+        <p>
+            Türkiye, 1985 yılında Kadına Karşı Her Türlü Ayrımcılığın Önlenmesi Sözleşmesi'ne (CEDAW) taraf olmuş ve 2002 yılında CEDAW İhtiyari Protokolünü onaylamıştır. Ayrıca İstanbul Sözleşmesi olarak da bilinen Kadınlara Yönelik Şiddet ve Aile İçi Şiddetin Önlenmesi ve Bunlarla Mücadeleye İlişkin Avrupa Konseyi Sözleşmesi'ni imzalayan (2011) ve onaylayan (2012) ilk ülke olmuştur. Türkiye, 20 Mart 2021 tarihinde İstanbul Sözleşmesi'nden çekildiğini açıklamıştır.[24] Türkiye'de etkili denilebilecek bir seviyede kadın hareketleri ve aktivisti bulunmaktadır. Bu hareketler ve aktivistler ülke çapında çeşitli kampanyalar düzenlemektedir. Örneğin İstanbul Sözleşmesi'nden çekilmenin ardından birçok kadın hakları savunucusu bu çekilmeyi protesto etmiştir. 
+
+        </p>
+        <h3>
+            Sonuç
+        </h3>
+        <p>
+            Dünyanın çeşitli bölgelerindeki kadınlar, bulundukları bölgenin mevcut siyasi, ekonomik, kültürel ve coğrafi durumuna bağlı olarak farklı şekillerde hak ihlallerine maruz kalmaktadır. Söz konusu hak ihlalleri coğrafyaya göre farklılık gösterse de temelde tüm dünyada kadınlar ciddi hak ihlallerine uğramaktadır. Bu sorunun çözümü için atılması gereken adımlar şu şekilde sıralanabilir:  
+            <ul>
+                <li>
+                    Kadın haklarının korunmasına yönelik oluşturulan uluslararası sözleşmelerin yaygınlaştırılması, sözleşmeleri kabul eden ülkelerdeki uygulamalarının kontrol edilmesi ve sözleşmeyi ihlal eden ülkelere yönelik yaptırımların hayata geçirilmesi gerekmektedir.
+                </li>
+                <li>
+                    Kadınların ve kız çocuklarının eğitimi desteklenmelidir. Bu mesele, küçük yaşta evliliklerin, zorla evliliklerin ve şiddetin önlenmesi ve sosyoekonomik refahın güçlenmesi gibi konular için oldukça önemlidir.
+
+                </li>
+                <li>
+                    Kadınların ekonomik olarak güçlendirilmesine yönelik faaliyetlerin arttırılması gerekmektedir.
+
+                </li>
+                <li>
+                    Kadınların kendi problemlerini daha iyi ifade edebilmeleri adına siyasi temsil oranları arttırılmalıdır.
+
+                </li>
+                <li>
+                    Kadınlara ve kız çocuklarına yönelik şiddeti sona erdirmek için şiddetin daha fazla görüldüğü bölgeler başta olmak üzere, bu yöndeki uluslararası yardımların arttırılması gerekmektedir.
+
+                </li>
+                <li>
+                    Temel kadın haklarının korunmasında toplumsal bir bütünlük oluşturulması adına erkeklerin de hak ihlalleri ve kısıtlamalara karşı başlatılan kampanyalara katılımları gerekmektedir.
+
+                </li>
+            </ul>
+        </p>
+        <p>
+            Kadın haklarının korunması ve hak ihlallerinin önlenebilmesi için gereken tüm adımların hızla atılması, küresel çaptaki kadın haklarının geliştirilmesinde ve hak ihlallerinin önlenmesinde hayati öneme sahiptir.
+        </p>
+
+        <p>
+            <strong>
+                Kadın hakları, insan haklarının ayrılmaz bir parçasıdır. Kadınların güçlenmesi, toplumun güçlenmesi demektir.
+            </strong>.</p>
+
+        
+
+    </div>
+    
+</body>
+<footer class="footer"> 
+    <div class="footer-content"> 
+        <p>Kadın Hakları İçin Birlikte Güçlüyüz!</p> 
+        <div class="social-icons"> 
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a> 
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> 
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a> 
+        </div> 
+    </div> 
+    <div class="footer-bottom"> 
+        <p>&copy; 2025 Tüm Hakları Saklıdır</p> 
+    </div> 
+</footer>
+</html>

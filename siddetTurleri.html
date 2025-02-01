@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+    <title>Şiddet Türleri</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background-image: url();
+            background-size: auto;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .page-header {
+            margin-top: 70px;
+            background-color:#9a75ba;
+            color: rgb(255, 255, 255);
+            padding: 20px 0;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: 500;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:#9975ba;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }   
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            animation: fadeIn 2s ease-in-out;
+            font-size: 2rem;
+            color: #53026e;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        h3 {
+            font-size: 1rem;
+            color: #ff006f;
+        }
+
+
+
+        p {
+            font-family: 'Merriweather', serif;
+            font-size: 18px;
+            font-weight: 400;
+            animation: slideIn 1.5s ease-in-out;
+            color: #383838;
+            text-indent: 50px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        ul {
+            animation: slideIn 1.5s ease-in-out;    
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            display: block;
+        }
+
+        .img-small {
+            max-width: 50%;
+            margin: 20px auto;
+        }
+
+        .img-medium {
+            max-width: 70%;
+            margin: 20px auto;
+        }
+
+        .img-large {
+            max-width: 90%;
+            margin: 20px auto;
+        }
+
+        .img-left {
+            max-width: 50%;
+            float: left;
+            margin: 0 20px 20px 0;
+        }
+
+        .img-right {
+            float: right;
+            margin: 0 0 20px 20px;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .flex-container img {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .flex-container p {
+            flex: 2;
+        }
+
+        .footer { 
+            background-color: #ffe5ec; 
+            padding: 20px 0; 
+            text-align: center; 
+            font-size: 18px; 
+            font-weight: 500; 
+        } 
+         
+        .footer .quote-box { 
+            display: inline-block; 
+            background-color: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+            color: #ff69b4; 
+            font-size: 16px; 
+            font-style: italic; 
+            animation: waveBox 2s ease-in-out infinite; 
+        }
+        
+        
+
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff42e0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            border: 2px solid #ff42e0;
+            margin: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        a.button:hover {
+            background-color: #baabff;
+            border-color: #baabff;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }    
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: 'Segoe UI', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu li a:hover {
+            color: #ff69b4;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+        .social-icon i { 
+            color: #744c97;  
+            font-size: 24px;  
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="anasayfa.html" class="logo">Birlikte Güçlü Kadınlar</a>
+            <ul class="nav-menu">
+                <li><a href="anasayfa.html">Ana Sayfa</a></li>
+                <li><a href="#">Hikayeler</a></li>
+                <li><a href="#">Misyonumuz</a></li>
+                <li><a href="kurumlar.html">Kurumlar</a></li>
+                <li><a href="#">Haberler</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="page-header">
+        <h1>Şiddet Türleri</h1>
+    </div>
+    <div class="container">
+        <h2>Şiddet Türleri Nelerdir?</h2>
+       
+            <p><strong>Fiziksel Şiddet:</strong> Bedensel güç veya üstünlük, bir şiddet aracı olarak kadını kontrol etmek, denetlemek, küçük düşürmek, aşağılamak veya cezalandırmak amacıyla kullanılıyorsa "fiziksel şiddet" söz konusudur. Bu şiddet biçimi, fiziksel üstünlük kurarak, bedene temas ederek ya da eşya kullanarak uygulanabilir. Yumruk atmak, tokat atmak, ısırmak, boğmak, tekmelemek, bıçakla yaralamak, kafasına sandalye fırlatmak fiziksel temas içeren şiddet biçimlerine örnektir. Bağırmak, yumrukla tehdit etmek, korkutucu şekilde bakmak, kapıyı tekmelemek, eşya kırmak, sağlık sorunları olduğunda doktora gitmesine izin vermemek ise sindirmek amacıyla fiziksel üstünlük kullanılarak uygulanan şiddet biçimlerine örnektir.</p>
+
+            <img src="img/psikolojikSiddet.jpg" alt="PsikolojikŞiddet" style="width:100%; border-radius: 10px; margin-bottom: 20px;">
+
+            <p><strong>Psikolojik Şiddet:</strong> Duygusal güç veya ihtiyaçlar, kadını kontrol etmek, denetlemek, küçük düşürmek, aşağılamak, cezalandırmak amacıyla şiddet aracı olarak kullanılıyorsa "psikolojik şiddet" söz konusudur. Fiziksel şiddetin aksine psikolojik şiddeti tarif etmek daha zordur.
+                <p>
+                    Psikolojik şiddet biçimlerinin bir kısmını aşağıdaki gibi sıralayabiliriz:
+                    <ul>
+                        <li>
+                            Duygusal ihtiyaçların (sevgi, ilgi, destek, değer vb.) kontrol sağlamak için keyfi şekilde karşılanması veya karşılanmaması,
+                        </li>
+                        <li>
+                            İstediklerini yaptırmak için cezalandırıcı, küçük düşürücü, yaralayıcı, tehdit edici davranış ve tutumlar sergilemek,
+                        </li>
+                        <li>
+                            Duygu sömürüsü yapmak, suçlu hissettirmek, utandırmak, küsmek, surat asmak, alay etmek, küfür ve hakaret etmek,
+                        </li>
+                        <li>
+                            Kıskançlık adı altında, nerede, ne zaman, kiminle ne yaptığını, ne giydiğini "Bu elbiseyle dışarı çıkamazsın" gibi baskıcı ya da "Kendi iyiliğin için onunla görüşmeni istemiyorum" gibi karşı tarafı düşündüğünü ifade eden sözler ve davranışlarla denetlemek, sosyal ilişkilerini kontrol altında tutmaya çalışmak,
+                        </li>
+                        <li>
+                            Hasta, sorunlu ya da deli olduğunu hissettirmek,
+                        </li>
+                        <li>
+                            Ne düşündüğünü, ne hissettiğini, ne istediğini, onun için neyin iyi olduğunu kadın adına tanımlamak, onun adına kararlar almak,
+                        </li>
+                        <li>
+                            Beceri ve yetilerini küçümsemek, karar mekanizmalarına dahil etmemek, bireysel haklarını yok saymak, yaptıklarını sürekli eleştirmek ve kendisini akılsız, aciz, yetersiz, beceriksiz, zayıf, muhtaç ve bağımlı hissettirmek,
+                        </li>
+                        <li>
+                            Yalnızlaştırmak; ailesi veya arkadaşları başta olmak üzere yakınlarından fiziksel veya duygusal olarak uzaklaştırmaya çalışmak, maddi ve manevi destek alabileceği bütün kişiler ve kuruluşlarla arasını bozmak ve bunlara ulaşımını engellemek; sevilmediğini, istenmediğini söylemek,
+                        </li>
+                        <li>
+                            Kişiliği, fiziksel görüntüsü, ailesi vb. ile ilgili hakaret etmek,
+            
+                        </li>
+                        <li>
+                            Gerçekleştirilmesi imkansız taleplerde bulunmak, yerine getirildiğinde ise talepleri değiştirmek,
+                        </li>
+                        <li>
+                            Kadının sahip olduğu evcil hayvanlara, kadını cezalandırmak ve kontrol etmek amacıyla şiddet uygulamak,
+
+                        </li>
+                        <li>
+                            Çocukları suçlu hissettirmek için kullanmak, çocukların kaçırılacağı,gösterilmeyeceği, elinden alınacağına ilişkin tehditler savurmak; çocuklara şiddet uygulamak.
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    Psikolojik şiddetin olduğu her ilişkide fiziksel şiddet olmayabilir ancak, fiziksel şiddetin olduğu her ilişkide psikolojik şiddetin bazı öğeleri bulunur. Psikolojik şiddet sıklıkla fiziksel şiddetten önce başlar ve tecridin eşlik ettiği yoğun psikolojik şiddet, fiziksel şiddetin uyarıcısı olabilir. 
+                </p>
+            </p>
+
+            
+        <div>
+            <img src="img/finansalSiddet.jpg" alt="Ekonomik Şiddet" class="img-left">
+
+            <p><strong>Ekonomik Şiddet:</strong> Maddi güç ve üstünlük, bir şiddet aracı olarak kadını kontrol etmek, denetlemek, küçük düşürmek, aşağılamak, cezalandırmak amacıyla kullanılıyorsa "ekonomik şiddet" söz konusudur. En yaygın ekonomik şiddet biçimleri arasında, kadının çalışmasına, meslek edinmesine, okulu ya da kursu bitirmesine veya işinde yükselmesine engel olmak, gelir ve birikimine el koymak, borçlandırmak (kadının adına kredi çektirmek, senet imzalatmak, şirket açtırmak ve kredi kartını kullanmak), para biriktirmesine, hesap açmasına ve yatırım yapmasına engel olmak, oldukça düşük miktar harçlıklarla günlük yaşamını sürdürmesini istemek ve bu olmadığında ise fiziksel ya da psikolojik şiddet uygulamak, para için yalvartmak, kadının maddi gelirini sömürmek, maddi ihtiyaçlarını kadını denetlemek adına keyfi ve tutarsız bir şekilde karşılamak yer alır.</p>
+        </div> 
+
+            <p><strong>Cinsel Şiddet:</strong> Cinselliğin, kadını kontrol etmek, denetlemek, küçük düşürmek, aşağılamak, cezalandırmak amacıyla şiddet aracı olarak kullanılmasına "cinsel şiddet" denir. Kadınlar, sıklıkla fiziksel şiddet sonrası cinsel şiddete maruz kalırlar. Ancak utandıkları ve kendilerini suçlu hissettikleri için çoğu kez cinsel şiddeti açıklayamazlar. Bu yüzden, evlilik içinde ve dışında cinsel şiddet çok yaygın olmasına rağmen, yapılan araştırmalarda cinsel şiddet oranının diğer şiddet biçimlerine göre daha düşük olduğu görülür.Tecavüz etmek, cinsel ilişkiye zorlamak, istemediği cinsel pozisyonlara zorlamak, "Hayır" dendiğini duymazdan gelmek, rızası olmadığı halde hoyratça ve acıtarak cinsel ilişkiye girmek, zorla ilaç, alkol veya uyuşturucu madde kullandırarak cinsel ilişkiye zorlamak, istemediği şekillerde, istemediği zamanlarda cinsel ilişkiye zorlamak ve cinsel bölgelerine dokunmak, cinselliği bir ceza/ödül yöntemi olarak kullanmak, başka kişilerle cinsel ilişkiye girmeye zorlamak, seks işçiliğine zorlamak, başka kişilerle cinsel ilişkiye girerken seyretmeye veya seyredilmeye zorlamak, cinsel ilişki için kadının rızasını tehdit, korkutma gibi yollarla inşa etmeye çalışmak, cinselliği kendi zevkine yönelik yaşamak, karşıdakinin ihtiyaç ve beklentilerini görmezden gelmek, sözle ve fiziksel yolla taciz etmek, teşhircilik yapmak, pornografik görüntüler izlemeye zorlamak, sürekli takip ederek telefon, internet gibi teknolojik araçlarla cinsel içerikli materyaller ya da konuşmalarla rahatsız etmek, onay almadan çıplak cinsellik içeren görüntüler çekmek ve cinsel içerikli görüntüleri yaymak ve yaymakla tehdit etmek, kadın bedenini ve cinselliğini aşağılayacak şekilde konuşmak yaygın görülen cinsel şiddet biçimleridir.</p>
+            <img src="img/DijitalSiddet.png" alt="Dijital Şiddet" style="width:100%; border-radius: 10px; margin-bottom: 20px;">
+
+            <p><strong>Dijital Şiddet:</strong> Teknolojik araçlar, kadını kontrol etmek, denetlemek, küçük düşürmek, aşağılamak, cezalandırmak amacıyla kullanılıyorsa dijital şiddet söz konusudur. Son 10 yılda sosyal paylaşım siteleri aracılığıyla yaygınlaşan, dijital ortamda 7/24 gözetlenmesi ve takip edilmesini içeren şiddet biçimleri, "yeni kuşak şiddet" olarak da adlandırılmaktadır.
+            <p>
+                Dijital şiddet biçimlerinin bir kısmını aşağıdaki gibi sıralayabiliriz:
+                <ul>
+                    <li>
+                        Cep telefonuna sürekli mesaj göndermek ya da kadının mesaj göndermesini istemek,
+                    </li>
+                    <li>
+                        Israrlı bir şekilde cep telefonundan aramak,
+                    </li>
+                    <li>
+                        Akıllı telefon uygulamalarını kullanarak kadını takip etmek ve denetlemek,
+                    </li>
+                    <li>
+                        İletişim bilgilerini (telefon numarası, mail adresi, sosyal medya hesaplarını), ona sormadan başka kişilere vermek ve bu kişilerin de kadına rahatsız edici mesajlar ve görüntüler göndermesini istemek,
+                    </li>
+                    <li>
+                        Çıplak fotoğraflarını çekmek veya çekmekle tehdit etmek, gizli kamera ile kayıt almak, bu kayıtları internet üzerinden yaymak veya yaymakla tehdit etmek,
+                    </li>
+                    <li>
+                        Sosyal medya üzerinden arkadaşlık kurarak, kadının kimlik bilgilerini almak, sonra da bu ilişkiyi sömürmek.
+                    </li>
+                    <li>
+                        Sosyal medya hesaplarını karıştırmak ve buradaki bilgilerle kadını denetlemek, tehdit etmek,
+                    </li>
+                    <li>
+                        Sosyal medyada kadını küçük düşüren, hakaret ve nefret içeren paylaşımlarda, yorumlarda bulunmak.
+                    </li>
+                </ul>
+            </p></p>
+        
+        <p> <strong> Şiddetin her türlüsü kabul edilemez. Eğer şiddete maruz kalıyorsanız, hemen yardım alın. </strong> </p>
+    </div>
+    <footer class="footer"> 
+        <div class="footer-content"> 
+            <p>Kadın Hakları İçin Birlikte Güçlüyüz!</p> 
+            <div class="social-icons"> 
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a> 
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> 
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a> 
+            </div> 
+        </div> 
+        <div class="footer-bottom"> 
+            <p>&copy; 2025 Tüm Hakları Saklıdır</p> 
+        </div> 
+    </footer>
+</body>
+</html>
