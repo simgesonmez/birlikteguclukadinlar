@@ -1,0 +1,312 @@
+
+/* Sayfa ayarları */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Header stili */
+header {
+    position: absolute; /* Header'ı fotoğrafın üstüne yerleştir */
+    top: 0;
+    width: 100%; /* Header'ı tam genişlik yap */
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
+    color: white; /* Yazı rengi beyaz */
+    z-index: 10; /* Header'ın üstte kalmasını sağla */
+    padding: 15px 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Sol ve sağa elemanları ayır */
+    position:fixed;
+
+}
+
+/* Logo */
+.logo {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 20px; /* Soldan boşluk */
+}
+
+/* Navbar Menüsü */
+header nav {
+    display: flex; 
+    
+    
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Elemanlar arasında boşluk bırak */ 
+    margin-left: 230px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color:  #ff69b4;
+}
+
+/* Görsel ayarları */
+.image {
+    width: 100%; /* Görselin tam genişlik kaplaması için */
+    height: 670px; 
+    object-fit: cover; /* Görseli kırpmadan ekranı kaplamasını sağlar */
+}
+
+.carousel-item img {
+    height: 600px; /* Slider yüksekliği */
+    object-fit: cover;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Yazı arka planı */
+    padding: 10px;
+    border-radius: 10px;
+}
+.custom-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .custom-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 105, 180, 0.4); /* Pembe ışık efekti */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1; /* Arka planda görünmesini sağla */
+  }
+
+  .custom-card:hover::before {
+    opacity: 1; /* Hover sırasında pembe ışığı göstermek */
+  }
+
+  .custom-card:hover {
+    transform: scale(1.05); /* Kartı büyütme efekti */
+  } 
+  .card .btn-primary {
+    background-color : #ff69b4; /* Pembe renk */
+    border-color: #ff69b4;
+}
+.card .btn-primary:hover {
+    background-color: #d1489e;
+    border-color: #d1489e; 
+}
+
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color:palevioletred; /* Pembe ton */
+   
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffb6c1, 0 0 15px #ffb6c1;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ff1493, 0 0 30px #ff1493;
+    }
+    100% {
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffb6c1, 0 0 15px #ffb6c1;
+    }
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color:purple; /* Beyaz metin */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    position: relative;
+    animation: glow 1.5s infinite alternate;
+}
+.fancy-quote {
+    background-color: #f8f9fa;
+    padding: 20px;
+    font-size: 18px;
+    font-style: italic;
+    color: #333;
+    border-radius: 15px;
+    border: 2px solid #ff69b4; /* Pembe sınır */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    text-align: center;
+    position: relative;
+    max-width: 80%;
+    margin: 20px auto;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.fancy-quote p {
+    margin: 0;
+    position: relative;
+}
+
+
+/* Hikaye Paylaş Formu */
+.form-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #ff69b4; /* Pembe renk */
+    margin-bottom: 30px;
+}
+
+.form-label {
+    font-size: 16px;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.5); /* Pembe renk odak efekti */
+}
+
+form .btn-custom {
+    background-color: #ff69b4;
+   
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+form .btn-custom:hover {
+    background-color: #d1489e; /* Daha koyu pembe ton */
+    border-color: #d1489e;
+}
+/* Footer */
+.footer {
+    background-color: #e791bc;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500; 
+    margin-top: 50px;
+}
+
+.footer .quote-box {
+    display: inline-block;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    color: #e791bc;
+    font-size: 16px;
+    font-style: italic;
+    animation: waveBox 2s ease-in-out infinite;
+}
+
+
+
+.balloon {
+    position: relative;
+    display: inline-block;
+    background-color: #ff69b4; /* Pembe renk */
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Baloncuk içindeki metni simgeleyen alt yazı kutusu */
+.balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #ff69b4 transparent transparent transparent; 
+   
+}
+
+.notification-bubble {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    background-color: #ff69b4; /* Pembe renk */
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bildirim balonunun popup'ı */
+.notification-popup {
+    display: none;
+    position: fixed;
+    top: 150px;
+    right: 20px;
+    background-color: #ff69b4;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 16px;
+}
+
+/* Popup kapatma butonu */
+.close-popup {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+} 
+social-icon{
+    color: #551A8B; 
+
+} 
