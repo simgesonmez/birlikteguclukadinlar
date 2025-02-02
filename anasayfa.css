@@ -66,7 +66,7 @@ header nav ul li a:hover {
 }
 
 .carousel-item img {
-    height: 600px; /* Slider yüksekliği */
+    height: 650px; /* Slider yüksekliği */
     object-fit: cover;
 }
 .carousel-caption {
